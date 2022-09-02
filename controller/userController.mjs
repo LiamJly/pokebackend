@@ -12,7 +12,7 @@ try{
     });
 }catch(error){
     res.status(400).json({
-        status: "Bad Request",
+        status: "Account Creation Error",
     })
     console.error(error);
 }
@@ -29,7 +29,7 @@ export const signIn = async (req, res) =>{
         });
     } catch(error){
         res.status(400).json({
-            status: "Bad Request",
+            status: "Login Error"
         })
         console.error(error);
     }

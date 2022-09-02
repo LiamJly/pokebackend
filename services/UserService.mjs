@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import User from "../models/User.mjs";
+//import jwt from "jsonwebtoken";
 import getSignedToken from "../util/signedToken.mjs"
 
 const createUser = async (payload) => {
@@ -18,7 +19,7 @@ const createUser = async (payload) => {
         return newUser.save();
     })
     .catch((err) =>{
-        throw new Error("All fields required")
+        throw new Error(err)
     });
 });
 }
@@ -34,14 +35,14 @@ const signIn =  async (payload) =>{
             .compare(payload.password, user.password)
             .then((res) =>{
                 if(res){
-                    const token = getSignedToken(user._id);
+                    const token = getSignedToken(user._id.toString())
                     return token;
                 }else{
                     throw new Error("Incorrect credentials, try again");
                 }
             })
             .catch((err) =>{
-                throw new Error("All fields required");
+                throw new Error(err);
             });
         }
     });
