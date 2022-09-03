@@ -34,5 +34,3 @@ export const signIn = async (req, res) =>{
         console.error(error);
     }
 };
-
-//export default {signUp, signIn}

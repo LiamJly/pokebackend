@@ -1,6 +1,5 @@
 import bcrypt from "bcryptjs";
 import User from "../models/User.mjs";
-//import jwt from "jsonwebtoken";
 import getSignedToken from "../util/signedToken.mjs"
 
 const createUser = async (payload) => {
