@@ -1,7 +1,7 @@
 import express, { json } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config()
 import usersRoute from './routes/users.mjs'
 
